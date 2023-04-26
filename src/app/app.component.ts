@@ -1,6 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, SimpleChange } from '@angular/core';
 
-import data from '../../example.json';
+import noxicon from '../../example-noxicon.json';
+import goodnes from '../../example-goodnes.json';
 
 @Component({
   selector: 'app-root',
@@ -9,15 +10,17 @@ import data from '../../example.json';
 })
 export class AppComponent {
   title = 'code-example';
-  @Input() data: any = data;
+  @Input() data: any;
 
   constructor() {
     this.getStatistics('Noxicon471');
+    this.changeValues('Noxicon471');
   }
 
-  debugLog(): void {
-    console.log(data.data.segments)
-    console.log(typeof data.data.segments)
+  changeValues(name: string): void {
+    if (name == 'Noxicon471') this.data = noxicon.noxicon;
+    else if(name == 'TheGoodnes471') this.data = goodnes.goodnes;
+    else this.data = "";
   }
 
   async getStatistics(name: string): Promise<void> {
