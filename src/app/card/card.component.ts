@@ -6,6 +6,9 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./card.component.scss']
 })
 export class CardComponent {
+  @Input() cardLabel: string = "";
   @Input() playedTime: string = "";
   @Input() playedMatches: number = 0;
+  @Input() isMain: boolean = false;
+  @Input() stats: any = {};
 }

@@ -1,7 +1,7 @@
 <main>
     <div class="main-card">
         <div class="header">
-            <span class="card-label">Main Statistic</span>
+            <span class="card-label">{{cardLabel}}</span>
             <span class="playtime">{{playedTime}} Play Time</span>
             <span class="matches">{{playedMatches}} Matches</span>
         </div>
@@ -9,31 +9,11 @@
         <hr />
 
         <div class="main-container">
-            <app-card-entry 
-                [label]="'DMG/Min'"
-                [amount]="'68'"
-            />
-
-            <app-card-entry 
-                [label]="'K/D'"
-                [amount]="'1.00'"
-                [ranking]="'Bottom 30%'"
-                [rankingBar]=70
-            />
-
-            <app-card-entry 
-                [label]="'HS %'"
-                [amount]="'34.8%'"
-                [ranking]="'Top 15%'"
-                [rankingBar]=85
-            />
-
-            <app-card-entry 
-                [label]="'Win %'"
-                [amount]="'56.0%'"
-                [ranking]="'Top 25%'"
-                [rankingBar]=75
-            />
+            <div *ngFor="let stat of stats | keyvalue">
+                <app-card-entry 
+                    [values]=stat.value
+                />
+            </div>
         </div>
     </div>
 </main>
