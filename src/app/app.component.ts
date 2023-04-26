@@ -11,13 +11,23 @@ export class AppComponent {
   title = 'code-example';
   @Input() data: any = data;
 
+  constructor() {
+    this.getStatistics('Noxicon471');
+  }
+
   debugLog(): void {
     console.log(data.data.segments)
     console.log(typeof data.data.segments)
   }
 
-  getStatistics(name: string): void {
-    // add feter for the values
-    console.log(name)
+  async getStatistics(name: string): Promise<void> {
+    // Sample url. The real one block the request.
+    try {
+      const response: Response = await fetch("https://jsonplaceholder.typicode.com/todos/1");
+      const jsonData: JSON = await response.json();
+      // this.data = jsonData;
+    } catch (error: unknown) {
+      console.error("Fetch error: ", error)
+    }
   }
 }
