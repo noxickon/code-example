@@ -1,23 +1,25 @@
 <main>
   <header>
-    <div style="margin-top: 200px;"></div>
+    <div id="headline">
+      Battlefield Statistics
+    </div>
   </header>
 
   <section>
-    <div>
-      <button (click)="getStatistics('Noxikon471')">Alex</button>
-      <button (click)="getStatistics('TheGoodness471')">Felix</button>
+    <div class="button-container">
+      <button (click)="changeValues('Noxicon471')">Alex</button>
+      <button (click)="changeValues('TheGoodnes471')">Felix</button>
     </div>
 
-    <button (click)="debugLog()">DEBUG</button>
-
-    <div class="card-container" *ngFor="let section of data.data.segments">
-      <app-card
-        [cardLabel]=section.metadata.name
-        [playedTime]=section.stats.timePlayed.displayValue
-        [playedMatches]=section.stats.matches.displayValue
-        [stats]=section.stats
-      />
+    <div *ngIf="data">
+      <div class="card-container" *ngFor="let section of data.segments">
+        <app-card
+          [cardLabel]=section.metadata.name
+          [playedTime]=section.stats.timePlayed.displayValue
+          [playedMatches]=section.stats.matches.displayValue
+          [stats]=section.stats
+        />
+      </div>
     </div>
   </section>
 </main>
