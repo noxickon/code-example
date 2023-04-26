@@ -1,28 +1,26 @@
 div.main-card {
     background-color: #333333;
     margin: auto;
-    min-width: 300px;
+    min-width: 400px;
     max-width: 1000px;
     padding-bottom: 20px;
     border-radius: 8px 8px 8px 8px;
 
     .header{
-        margin: auto auto 15px auto;
+        margin: auto auto auto auto;
         padding-top: 15px;
+        display: table;
+        width: 100%;
+        table-layout: fixed;
+        text-align: center;
 
-        span {
-            margin-left: 20px;
+        div {
+            word-break: break-word;
+            display: table-cell;
+            margin: auto;
 
             &.card-label {
                 font-size: 25px;
-            }
-
-            &.playtime {
-
-            }
-
-            &.matches {
-                
             }
         }
     }
