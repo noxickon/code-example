@@ -1,0 +1,62 @@
+div.item {
+    width: 180px;
+    max-width: 180px;
+    height: 75px;
+    max-height: 75px;
+    background-color: #111111;
+    flex-grow: 1;
+    padding: 12px 20px 12px 20px;
+    border-radius: 5px 5px 5px 5px;
+    margin: 10px 10px 10px 10px;
+
+    div.value-container {
+        display: flex;
+        margin: auto;
+
+        div.text {
+            margin-left: 10px;
+        }
+
+        span {
+            &.label {
+                font-weight: 700;
+            }
+
+            &.amount {
+                font-size: 0.9rem;
+            }
+    
+            &.ranking {
+                font-weight: 200;
+                font-size: 0.625rem;
+            }
+        }
+    
+        progress {
+            border-radius: 2px;
+            height: 5px;
+            max-height: 5px;
+            width: 69px;
+            max-width: 69px;
+
+            -webkit-transform-origin: 100% 100%;
+            -webkit-transform: rotate(270deg);
+            -moz-transform-origin: 100% 100%;
+            -moz-transform: rotate(270deg);
+            -ms-transform-origin: 100% 100%;
+            -ms-transform: rotate(270deg);
+            transform-origin: 93% 100%;
+            transform: rotate(270deg);   
+            
+            &::-webkit-progress-bar {
+                background-color: #66666666;
+                border-radius: 2px;
+            }
+    
+            &::-webkit-progress-value {
+                background-color: #ba86fd;
+                border-radius: 2px;
+            }    
+        }
+    }
+}

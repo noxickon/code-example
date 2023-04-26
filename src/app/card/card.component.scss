@@ -1,0 +1,42 @@
+div.main-card {
+    background-color: #333333;
+    margin: auto;
+    min-width: 300px;
+    max-width: 1000px;
+    padding-bottom: 20px;
+    border-radius: 8px 8px 8px 8px;
+
+    .header{
+        margin: auto auto 15px auto;
+        padding-top: 15px;
+
+        span {
+            margin-left: 20px;
+
+            &.card-label {
+                font-size: 25px;
+            }
+
+            &.playtime {
+
+            }
+
+            &.matches {
+                
+            }
+        }
+    }
+
+    hr {
+        border-color: #333333;
+    }
+
+    div.main-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        margin: 15px auto auto auto;
+    }
+}
