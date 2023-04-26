@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-import noxicon from '../../example.json';
+import data from '../../example.json';
 
 @Component({
   selector: 'app-root',
@@ -9,13 +9,15 @@ import noxicon from '../../example.json';
 })
 export class AppComponent {
   title = 'code-example';
-  @Input() data: any = noxicon;
+  @Input() data: any = data;
 
   debugLog(): void {
-    console.log(noxicon)
+    console.log(data.data.segments)
+    console.log(typeof data.data.segments)
   }
 
   getStatistics(name: string): void {
+    // add feter for the values
     console.log(name)
   }
 }
