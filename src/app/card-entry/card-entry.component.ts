@@ -6,9 +6,20 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./card-entry.component.scss']
 })
 export class CardEntryComponent {
-  @Input() label: string = "";
-  @Input() amount: string = "";
-  @Input() value: number = 0;
-  @Input() ranking?: string;
-  @Input() rankingBar?: number;
+  @Input() values: any;
+
+  getPercentile(): string {
+    let percentile: number | null;
+
+    if (this.values.percentile !== null) {
+      if (this.values.percentile > 50) {
+        percentile = 100 - this.values.percentile;
+        return "Top " + percentile + "%";
+      } else {
+        return "Bottom " + this.values.percentile + "%";
+      }
+    }else {
+      return "";
+    }
+  }
 }

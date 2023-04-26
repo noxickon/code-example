@@ -1,13 +1,13 @@
 <main>
     <div class="item">
         <div class="value-container">
-            <progress value={{rankingBar}} max="100"></progress>
+            <progress value={{values.percentile}} max="100"></progress>
             <div class="text">
-                <span class="label">{{label}}</span>
+                <span class="label">{{values.displayName}}</span>
                 <br />
-                <span class="amount">{{amount}}</span>
+                <span class="amount">{{values.displayValue}}</span>
                 <br>
-                <span class="ranking">{{ranking}}</span>
+                <span class="ranking">{{getPercentile()}}</span>
                 <br />
             </div>
         </div>
