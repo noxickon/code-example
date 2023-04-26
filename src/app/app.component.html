@@ -7,11 +7,17 @@
     <div>
       <button (click)="getStatistics('Noxikon471')">Alex</button>
       <button (click)="getStatistics('TheGoodness471')">Felix</button>
-      <!-- <button (click)="getStatistics()")>Raphael</button> -->
     </div>
 
     <button (click)="debugLog()">DEBUG</button>
 
-    <app-card></app-card>
+    <div class="card-container" *ngFor="let section of data.data.segments">
+      <app-card
+        [cardLabel]=section.metadata.name
+        [playedTime]=section.stats.timePlayed.displayValue
+        [playedMatches]=section.stats.matches.displayValue
+        [stats]=section.stats
+      />
+    </div>
   </section>
 </main>
